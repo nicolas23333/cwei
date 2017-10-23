@@ -93,6 +93,17 @@ int InitMenuData(tLinkTable ** ppLinktable)
     return 0; 
 }
 
+int SearchCondition(tLinkTableNode * pLinkTableNode, void *args) 
+{ 
+char *cmd = (char *)args; 
+tDataNode * pNode = (tDataNode *)pLinkTableNode; 
+if(strcmp(pNode->cmd, cmd) == 0) 
+{ 
+return SUCCESS; 
+} 
+return FAILURE; 
+}
+
 /* menu program */
 
 tLinkTable * head = NULL;
